@@ -1,0 +1,213 @@
+[
+    {
+        "id": "c7898c63ae934d0e",
+        "type": "tab",
+        "label": "wrap-update-unwrap-example",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b7c098ce73224b56",
+        "type": "inject",
+        "z": "c7898c63ae934d0e",
+        "name": "original message",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "property1",
+                "v": "original property1",
+                "vt": "str"
+            },
+            {
+                "p": "property2",
+                "v": "original propery2",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "original message topic",
+        "payload": "original payload",
+        "payloadType": "str",
+        "x": 143,
+        "y": 139,
+        "wires": [
+            [
+                "1ff50691eb71e0c5",
+                "4d7a4fcab21aa21b"
+            ]
+        ]
+    },
+    {
+        "id": "93f8c13819d2c585",
+        "type": "change",
+        "z": "c7898c63ae934d0e",
+        "name": "intervening flow changes several properties",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "new payload",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "new topic",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "property1",
+                "pt": "msg",
+                "to": "new property1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "property2",
+                "pt": "msg",
+                "to": "new property2",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "property3",
+                "pt": "msg",
+                "to": "new property3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 593,
+        "y": 139,
+        "wires": [
+            [
+                "872c4f17d7d4faa1",
+                "212ccf34e76c954e"
+            ]
+        ]
+    },
+    {
+        "id": "1ff50691eb71e0c5",
+        "type": "debug",
+        "z": "c7898c63ae934d0e",
+        "name": "orig msg before wrap",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 268,
+        "y": 207,
+        "wires": []
+    },
+    {
+        "id": "efed087f478e4400",
+        "type": "debug",
+        "z": "c7898c63ae934d0e",
+        "name": "output of wrap",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 543,
+        "y": 199,
+        "wires": []
+    },
+    {
+        "id": "872c4f17d7d4faa1",
+        "type": "debug",
+        "z": "c7898c63ae934d0e",
+        "name": "After mods by intervening flow",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 953,
+        "y": 199,
+        "wires": []
+    },
+    {
+        "id": "31f358c8d131b26c",
+        "type": "debug",
+        "z": "c7898c63ae934d0e",
+        "name": "output of unwrap",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1073,
+        "y": 139,
+        "wires": []
+    },
+    {
+        "id": "cd6df018b41ff79d",
+        "type": "comment",
+        "z": "c7898c63ae934d0e",
+        "name": "message is wrapped before destructive opperation and then restored afterwards",
+        "info": "Original message contains payload and other properties that we will need later and want to preserve\n\nThe wrap operation encapsulates the original message as a property on a new otherwise empty message\n\nThe subsequent flow can perform operations that can add or change properties on the current message\nThis might include making an API call to get additional information\n\nThe unwrap operation extracts the original message and merges in the payload of the outer message\nas a new property \"outer_payload\"\n\nThe subsequent flow can combine the outer_payload information with the other preserved properties of the \nunwrapped message.\n",
+        "x": 317,
+        "y": 74,
+        "wires": []
+    },
+    {
+        "id": "4d7a4fcab21aa21b",
+        "type": "wrap-unwrap",
+        "z": "c7898c63ae934d0e",
+        "name": "",
+        "operation": "wrap",
+        "x": 313,
+        "y": 139,
+        "wires": [
+            [
+                "93f8c13819d2c585",
+                "efed087f478e4400"
+            ]
+        ]
+    },
+    {
+        "id": "212ccf34e76c954e",
+        "type": "wrap-unwrap",
+        "z": "c7898c63ae934d0e",
+        "name": "",
+        "operation": "unwrap",
+        "x": 883,
+        "y": 139,
+        "wires": [
+            [
+                "31f358c8d131b26c"
+            ]
+        ]
+    }
+]

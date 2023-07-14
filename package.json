@@ -1,0 +1,19 @@
+{
+  "name": "@tonymacdonald/node-red-msg-encapsulation",
+  "version": "0.0.1",
+  "description": "Wrap existing message as a property in a new message or extract wrapped message",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tony MacDonald",
+  "license": "ISC",
+  "keywords": [ "node-red" ],
+  "engines": { "node": ">=12.0.0" },
+  "node-red": {
+        "version": ">=1.0.0",
+        "nodes": {
+            "wrap-unwrap": "wrap-unwrap.js"
+        }
+    }
+}
