@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bugs":"https://github.com/tonymacdonald2008/node-red-msg-encapsulation/issues",
   "author": "Tony MacDonald",
   "license": "ISC",
   "keywords": [ "node-red" ],
