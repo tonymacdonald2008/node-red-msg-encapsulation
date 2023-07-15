@@ -1,37 +1,25 @@
 <script type="text/javascript">
-    RED.nodes.registerType('wrap-unwrap',{
+    RED.nodes.registerType('unwrap',{
         category: 'encapsulation',
         color: '#E2D96E',
         defaults: {
-            name: {value:""},
-            operation: {value:"wrap"}
+            name: {value:""}
         },
         inputs:1,
         outputs:1,
-        icon: function() {
-            return "wrap" == this.operation  ? "font-awesome/fa-envelope-o" : "font-awesome/fa-envelope-open-o";
-        },
-        label: function() {
-            return this.name||this.operation||"wrap";
-        }
+        icon: "font-awesome/fa-envelope-open-o",
+        label: "unwrap"
     });
 </script>
 
-<script type="text/html" data-template-name="wrap-unwrap">
+<script type="text/html" data-template-name="unwrap">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
-    <div class="form-row">
-        <label for="node-input-operation"><i class="fa fa-list"></i> Operation</label>
-        <select id="node-input-operation" >
-            <option value="wrap">wrap</option>
-            <option value="unwrap">unwrap</option>
-        </select>
-    </div>
 </script>
 
-<script type="text/html" data-help-name="wrap-unwrap">
+<script type="text/html" data-help-name="unwrap">
     <p>A simple node that wraps an existing message in a property of a new message or conversely unwraps a previously wrapped message.</p>
     <h3>Output</h3>
     <p>If <code>operation</code> is <code>wrap</code>, the default,</p>

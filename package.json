@@ -14,7 +14,8 @@
   "node-red": {
         "version": ">=1.0.0",
         "nodes": {
-            "wrap-unwrap": "wrap-unwrap.js"
+            "wrap": "wrap.js",
+            "unwrap": "unwrap.js"
         }
     }
 }
