@@ -4,18 +4,27 @@
   "description": "Wrap existing message as a property in a new message or extract wrapped message",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha \"test/**/*_spec.js\""
   },
-  "bugs":"https://github.com/tonymacdonald2008/node-red-msg-encapsulation/issues",
+  "bugs": "https://github.com/tonymacdonald2008/node-red-msg-encapsulation/issues",
   "author": "Tony MacDonald",
   "license": "ISC",
-  "keywords": [ "node-red" ],
-  "engines": { "node": ">=12.0.0" },
+  "keywords": [
+    "node-red"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "node-red": {
-        "version": ">=1.0.0",
-        "nodes": {
-            "wrap": "wrap.js",
-            "unwrap": "unwrap.js"
-        }
+    "version": ">=1.0.0",
+    "nodes": {
+      "wrap": "wrap.js",
+      "unwrap": "unwrap.js"
     }
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "node-red": "^3.0.2",
+    "node-red-node-test-helper": "^0.3.2"
+  }
 }

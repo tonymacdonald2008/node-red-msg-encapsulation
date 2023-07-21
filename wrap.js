@@ -3,10 +3,14 @@ module.exports = function(RED) {
         RED.nodes.createNode(this,config);
         var node = this;
         node.propertyname = "wrapped_msg";
-        node.on('input', function(msg) {
+        node.on('input', function(msg, send, done) {
+            send = send || function() { node.send.apply(node,arguments) }
             var newMsg = {};
             newMsg[node.propertyname] = msg;
-            node.send(newMsg);
+            send(newMsg);
+            if (done) {
+                done();
+            }
         });
     }
     RED.nodes.registerType("wrap",WrapNode);
