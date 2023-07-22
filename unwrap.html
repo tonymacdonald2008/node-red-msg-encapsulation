@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('unwrap',{
+    RED.nodes.registerType('unwrap-msg',{
         category: 'encapsulation',
         color: '#E2D96E',
         defaults: {
@@ -9,19 +9,19 @@
         outputs:1,
         icon: "font-awesome/fa-envelope-open-o",
         label: function() {
-            return this.name||"unwrap";
+            return this.name||"unwrap-msg";
         }
     });
 </script>
 
-<script type="text/html" data-template-name="unwrap">
+<script type="text/html" data-template-name="unwrap-msg">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="unwrap">
+<script type="text/html" data-help-name="unwrap-msg">
     <p>A simple node that unwraps a previously wrapped message.</p>
     <h3>Inputs</h3>
     <dl class="message-properties">
@@ -42,12 +42,12 @@
         <dd>The properties of the original wrapped message from <code>msg.wrapped_msg</code> on the incoming message.</dd>
     </dl>
     <h3>Details</h3>
-    <p>The previously wrapped message is extracted from the <code>wrapped_msg</code> property of the incoming message.</p>
-    <p>The payload of the incoming message is preserved as a new property <code>outer_payload</code> added to the unwrapped message and it is sent oun the output.</p>
+    <p>The previously wrapped message is extracted from the <code>msg.wrapped_msg</code> property of the incoming message.</p>
+    <p>The payload of the incoming message is preserved as a new property <code>msg.outer_payload</code> added to the unwrapped message and it is sent oun the output.</p>
     <p>No other properties of the incoming message are preserved. It is important to ensure that the payload contains all information that will be needed to be integrated in the subsequent flow.</p>
-    <p>The <code>outer_payload</code> propterty on the unwrapped message allows the result of the intervening flow to be integrated with the newly unwrapped message.</p>
-    <p>If there is no <code>wrapped_msg</code> property on the incoming message, an error is logged and the incoming message is passed unchanged to the output.</p>
-    <p>Using the wrap and unwrap nodes around a destructive section of the flow allows for processing on the intervening flow without owerwriting properties of the wrapped message.</p>
+    <p>The <code>msg.outer_payload</code> propterty on the unwrapped message allows the result of the intervening flow to be integrated with the newly unwrapped message.</p>
+    <p>If there is no <code>msg.wrapped_msg</code> property on the incoming message, an error is logged and the incoming message is passed unchanged to the output.</p>
+    <p>Using the wrap-msg and unwrap-msg nodes around a destructive section of the flow allows for processing on the intervening flow without owerwriting properties of the wrapped message.</p>
     <h3>References</h3>
     <ul>
         <li><a href="https://github.com/tonymacdonald2008/node-red-msg-encapsulation" >GitHub</a> - the node's github repository</li>

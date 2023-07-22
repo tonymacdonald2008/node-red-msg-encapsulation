@@ -1,7 +1,7 @@
 {
   "name": "@tonymacdonald/node-red-msg-encapsulation",
   "version": "0.0.1",
-  "description": "Wrap existing message as a property in a new message or extract wrapped message",
+  "description": "Wrap existing message as a property in a new message or extract a previously wrapped message",
   "main": "",
   "scripts": {
     "test": "mocha \"test/**/*_spec.js\""
@@ -18,8 +18,8 @@
   "node-red": {
     "version": ">=1.0.0",
     "nodes": {
-      "wrap": "wrap.js",
-      "unwrap": "unwrap.js"
+      "wrap-msg": "wrap.js",
+      "unwrap-msg": "unwrap.js"
     }
   },
   "devDependencies": {
