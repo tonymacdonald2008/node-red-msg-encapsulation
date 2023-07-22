@@ -25,5 +25,5 @@ module.exports = function(RED) {
             }
         });
     }
-    RED.nodes.registerType("unwrap",UnwrapNode);
+    RED.nodes.registerType("unwrap-msg",UnwrapNode);
 }

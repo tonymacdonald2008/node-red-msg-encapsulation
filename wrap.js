@@ -13,5 +13,5 @@ module.exports = function(RED) {
             }
         });
     }
-    RED.nodes.registerType("wrap",WrapNode);
+    RED.nodes.registerType("wrap-msg",WrapNode);
 }

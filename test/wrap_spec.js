@@ -2,7 +2,7 @@ var helper = require("node-red-node-test-helper");
 var wrapNode = require("../wrap.js");
 const property_name = 'wrapped_msg';
 
-describe('wrap Node', function () {
+describe('wrap-msg Node', function () {
   
   beforeEach(function (done) {
       helper.startServer(done);
@@ -14,7 +14,7 @@ describe('wrap Node', function () {
   });
 
   it('should be loaded', function (done) {
-    var flow = [{ id: "n1", type: "wrap", name: "test name" }];
+    var flow = [{ id: "n1", type: "wrap-msg", name: "test name" }];
     helper.load(wrapNode, flow, function () {
       var n1 = helper.getNode("n1");
       n1.should.have.property('name', 'test name');
@@ -23,7 +23,7 @@ describe('wrap Node', function () {
   });
 
   it('should create wrapped_msg property', function (done) {
-    var flow = [{ id: "n1", type: "wrap", name: "test name",wires:[["n2"]] },
+    var flow = [{ id: "n1", type: "wrap-msg", name: "test name",wires:[["n2"]] },
     { id: "n2", type: "helper" }];
     helper.load(wrapNode, flow, function () {
       var n2 = helper.getNode("n2");

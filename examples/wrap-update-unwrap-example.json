@@ -183,7 +183,7 @@
     },
     {
         "id": "d1ca0b0cfbd691c3",
-        "type": "wrap",
+        "type": "wrap-msg",
         "z": "c7898c63ae934d0e",
         "name": "",
         "x": 330,
@@ -197,7 +197,7 @@
     },
     {
         "id": "ff91c6ca923607a0",
-        "type": "unwrap",
+        "type": "unwrap-msg",
         "z": "c7898c63ae934d0e",
         "name": "",
         "x": 920,

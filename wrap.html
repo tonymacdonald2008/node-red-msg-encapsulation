@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('wrap',{
+    RED.nodes.registerType('wrap-msg',{
         category: 'encapsulation',
         color: '#E2D96E',
         defaults: {
@@ -9,19 +9,19 @@
         outputs:1,
         icon: "font-awesome/fa-envelope-o",
         label: function() {
-            return this.name||"wrap";
+            return this.name||"wrap-msg";
         }
     });
 </script>
 
-<script type="text/html" data-template-name="wrap">
+<script type="text/html" data-template-name="wrap-msg">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="wrap">
+<script type="text/html" data-help-name="wrap-msg">
     <p>A simple node that wraps an existing message in a property of a new otherwise empty message.</p>
      <h3>Outputs</h3>
      <dl class="message-properties">
@@ -30,7 +30,7 @@
      </dl>
     <h3>Details</h3>
     <p>The entire incoming message is wrapped into a property <code>msg.wrapped_msg</code> on a new otherwise empty message which is sent on the output.</p>
-    <p>Using the wrap and unwrap nodes around a destructive section of the flow allows for processing on the intervening flow without owerwriting properties of the wrapped message.</p>
+    <p>Using the wrap-msg and unwrap-msg nodes around a destructive section of the flow allows for processing on the intervening flow without owerwriting properties of the wrapped message.</p>
     <h3>References</h3>
     <ul>
         <li><a href="https://github.com/tonymacdonald2008/node-red-msg-encapsulation" >GitHub</a> - the node's github repository</li>
