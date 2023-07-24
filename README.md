@@ -3,7 +3,12 @@
 A pair of simple nodes to wrap an incoming node red message into a prpperty of a new, otherwise empty, message and to, later, unwrap the previously wrapped message.
 This allows the state carried in the original message to be preserved for later use while still being carried along with the message.
 
+# Example
+![nodes](readme/example.png)
+
 # Nodes
+
+![nodes](readme/nodes1.png)
 
 ## wrap-msg
 
