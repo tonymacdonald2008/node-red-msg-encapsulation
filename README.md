@@ -5,6 +5,8 @@ This allows the state carried in the original message to be preserved for later 
 
 # Nodes
 
+![nodes](readme/nodes1.png)
+
 ## wrap-msg
 
 ### Outputs
