@@ -45,7 +45,7 @@ The payload of the incoming message is preserved as a new property `outer_payloa
 
 The `outer_payload` propterty on the unwrapped message allows the result of the intervening flow to be integrated with the newly unwrapped message.
 
-If there is no `wrapped_msg` property on the incoming message, an error is logged and the incoming message is passed unchanged to the output.
+If there is no `wrapped_msg` property on the incoming message, a catchable error is raised.
 
 Using the `wrap-msg` and `unwrap-msg` nodes around a destructive section of the flow allows for processing on the intervening flow without owerwriting properties of the wrapped message.
 
