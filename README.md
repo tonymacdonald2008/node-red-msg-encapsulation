@@ -4,11 +4,11 @@ A pair of simple nodes to wrap an incoming node red message into a property of a
 This allows the state carried in the original message to be preserved for later use while still being carried along with the message.
 
 # Example
-![nodes](readme/example.png)
+![example](https://github.com/tonymacdonald2008/node-red-msg-encapsulation/blob/main/readme/example.png?raw=true)
 
 # Nodes
 
-![nodes](readme/nodes1.png)
+![nodes](https://github.com/tonymacdonald2008/node-red-msg-encapsulation/blob/main/readme/nodes1.png?raw=true)
 
 ## wrap-msg
 
