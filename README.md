@@ -1,6 +1,6 @@
 # node-red-msg-encapsulation
 
-A pair of simple nodes to wrap an incoming node red message into a prpperty of a new, otherwise empty, message and to, later, unwrap the previously wrapped message.
+A pair of simple nodes to wrap an incoming node red message into a property of a new, otherwise empty, message and to, later, unwrap the previously wrapped message.
 This allows the state carried in the original message to be preserved for later use while still being carried along with the message.
 
 # Example
@@ -29,7 +29,7 @@ The entire incoming message is wrapped into a property `msg.wrapped_msg` on a ne
 | input | description |
 | --- | --- |
 | `wrapped_msg` (object)   |  the original wrapped message object to be unwrapped. 
-| `payload` |  the payload to be added to the unwrapped message as `msg.outer_payload<`
+| `payload` |  the payload to be added to the unwrapped message as `msg.outer_payload`
 
 ### Output
 
@@ -41,7 +41,7 @@ The entire incoming message is wrapped into a property `msg.wrapped_msg` on a ne
 ### Details
 
 The previously wrapped message is extracted from the `wrapped_msg` property of the incoming message, 
-The payload of the incoming message is preserved as a new property `outer_payload` added to the unwrapped message and it is sent oun the output.
+The payload of the incoming message is preserved as a new property `outer_payload` added to the unwrapped message which is sent to the output.
 
 The `outer_payload` propterty on the unwrapped message allows the result of the intervening flow to be integrated with the newly unwrapped message.
 
