@@ -1,6 +1,6 @@
 {
   "name": "@tonymacdonald/node-red-msg-encapsulation",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Wrap existing message as a property in a new message or extract a previously wrapped message",
   "main": "",
   "scripts": {
